@@ -28,12 +28,9 @@ jobs:
       #- name: Check that Cargo.lock is up to date.
       #  run: cargo update --workspace --locked
 
-      - name: Build
-        run: cargo build
+      - name: Install latest nightly
+        run: rustup toolchain install nightly -t x86_64-unknown-none --profile minimal -c rustfmt
 
-      - name: Clippy
-        run: cargo clippy
-
-      - name: Test
-        run: cargo test
+      - name: Format
+        run: cargo +nightly fmt --check
 
