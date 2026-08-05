@@ -5,7 +5,9 @@
 #![no_std]
 #![macro_use]
 
+#[rustfmt::skip]
 mod interface;
+#[rustfmt::skip]
 pub use interface::*;
 
 /// Convenience helper to instantiate [`TpmRc`].
